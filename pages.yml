@@ -3,7 +3,7 @@ name: Deploy Enoch Files
 on:
   push:
     branches:
-      - main  # make sure this is your main branch
+      - main
 
 jobs:
   deploy:
@@ -13,13 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Configure Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./  # root of your project
+          path: ./   # Root folder
 
       - name: Deploy
         uses: actions/deploy-pages@v1
