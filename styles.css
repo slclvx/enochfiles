@@ -1,11 +1,13 @@
+/* General */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #1e1e1e; /* dark gray */
+    font-family: 'Arial', sans-serif;
+    background: #1e1e1e;
     color: #f5f5f5;
+    transition: background 0.3s ease;
 }
 
-/* Landing Page */
+/* Landing */
 .landing {
     text-align: center;
     margin-top: 15%;
@@ -14,7 +16,7 @@ body {
 .main-title {
     font-size: 3rem;
     letter-spacing: 4px;
-    color: #ff6b6b; /* light red */
+    color: #ff6b6b;
 }
 
 .countdown {
@@ -30,38 +32,49 @@ body {
     border: none;
     color: white;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
 }
 
 .enter-btn:hover {
     background: #cc4c4c;
+    transform: translateY(-2px);
 }
 
-/* Admin Toggle Button */
-.admin-toggle {
+/* Hamburger Button */
+.hamburger {
     position: fixed;
     top: 20px;
     right: 20px;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
-    font-size: 20px;
-    opacity: 0.6;
+    z-index: 1000;
 }
 
-.admin-toggle:hover {
-    opacity: 1;
+.hamburger div {
+    height: 4px;
+    background: #ff6b6b;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* Admin Panel */
 .admin-panel {
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
+    right: -320px;
+    width: 320px;
     height: 100%;
     background: #2a2a2a;
     padding: 30px;
-    transition: 0.4s ease;
+    transition: right 0.5s ease;
     box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    border-radius: 20px 0 0 20px;
 }
 
 .admin-panel.active {
@@ -72,9 +85,10 @@ body {
 .admin-panel button {
     width: 100%;
     margin-top: 10px;
-    padding: 10px;
+    padding: 12px;
     background: #1e1e1e;
     border: 1px solid #ff6b6b;
+    border-radius: 12px;
     color: white;
 }
 
@@ -82,13 +96,14 @@ body {
     background: #ff6b6b;
     border: none;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .admin-panel button:hover {
     background: #cc4c4c;
 }
 
-/* Vault Page */
+/* Vault */
 .page-title {
     text-align: center;
     margin-top: 60px;
@@ -102,6 +117,7 @@ body {
     width: 300px;
     background: #2a2a2a;
     border: 1px solid #ff6b6b;
+    border-radius: 12px;
     color: white;
 }
 
@@ -114,9 +130,11 @@ body {
     padding: 20px;
     margin: 15px 0;
     background: #2a2a2a;
-    border-left: 4px solid #ff6b6b;
+    border-left: 6px solid #ff6b6b;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
 
 .file:hover {
@@ -128,12 +146,14 @@ body {
     cursor: default;
 }
 
-/* File Pages */
+/* File Page */
 .file-wrapper {
     max-width: 800px;
     margin: 80px auto;
     padding: 40px;
     background: #2a2a2a;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
 .file-content {
@@ -142,11 +162,12 @@ body {
     margin-top: 20px;
 }
 
-/* Hover Censor */
+/* Censor Hover */
 .censor {
     background: #ff6b6b;
     color: transparent;
     padding: 2px 6px;
+    border-radius: 6px;
     transition: 0.3s ease;
 }
 
@@ -155,17 +176,19 @@ body {
     color: #ff6b6b;
 }
 
-/* Buttons */
+/* Next Button */
 .next-btn {
     margin-top: 40px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: #ff6b6b;
     border: none;
     color: white;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .next-btn:hover {
     background: #cc4c4c;
+    transform: translateY(-2px);
 }
