@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vault</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -11,12 +13,8 @@
 <input type="text" id="searchBar" placeholder="Search Files..." onkeyup="searchFiles()">
 
 <div class="file-list">
-    <div class="file" onclick="location.href='file001.html'">
-        FILE 001 — THE NEW MAN
-    </div>
-    <div class="file locked">
-        FILE 002 — LOCKED
-    </div>
+    <div class="file" onclick="navigateTo('file001.html')">FILE 001 — THE NEW MAN</div>
+    <div class="file locked">FILE 002 — LOCKED</div>
 </div>
 
 <script src="script.js"></script>
