@@ -1,11 +1,11 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #1a1a1a;
+    background: #1e1e1e; /* dark gray */
     color: #f5f5f5;
 }
 
-/* Landing */
+/* Landing Page */
 .landing {
     text-align: center;
     margin-top: 15%;
@@ -14,7 +14,7 @@ body {
 .main-title {
     font-size: 3rem;
     letter-spacing: 4px;
-    color: #ff4d4d;
+    color: #ff6b6b; /* light red */
 }
 
 .countdown {
@@ -26,7 +26,7 @@ body {
 .enter-btn {
     margin-top: 30px;
     padding: 12px 30px;
-    background: #ff4d4d;
+    background: #ff6b6b;
     border: none;
     color: white;
     cursor: pointer;
@@ -34,10 +34,10 @@ body {
 }
 
 .enter-btn:hover {
-    background: #cc0000;
+    background: #cc4c4c;
 }
 
-/* Admin Toggle */
+/* Admin Toggle Button */
 .admin-toggle {
     position: fixed;
     top: 20px;
@@ -58,7 +58,7 @@ body {
     right: -300px;
     width: 300px;
     height: 100%;
-    background: #242424;
+    background: #2a2a2a;
     padding: 30px;
     transition: 0.4s ease;
     box-shadow: -5px 0 20px rgba(0,0,0,0.5);
@@ -73,26 +73,26 @@ body {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
-    background: #1a1a1a;
-    border: 1px solid #ff4d4d;
+    background: #1e1e1e;
+    border: 1px solid #ff6b6b;
     color: white;
 }
 
 .admin-panel button {
-    background: #ff4d4d;
+    background: #ff6b6b;
     border: none;
     cursor: pointer;
 }
 
 .admin-panel button:hover {
-    background: #cc0000;
+    background: #cc4c4c;
 }
 
-/* Vault */
+/* Vault Page */
 .page-title {
     text-align: center;
     margin-top: 60px;
-    color: #ff4d4d;
+    color: #ff6b6b;
 }
 
 #searchBar {
@@ -100,8 +100,8 @@ body {
     margin: 30px auto;
     padding: 12px;
     width: 300px;
-    background: #242424;
-    border: 1px solid #ff4d4d;
+    background: #2a2a2a;
+    border: 1px solid #ff6b6b;
     color: white;
 }
 
@@ -113,8 +113,8 @@ body {
 .file {
     padding: 20px;
     margin: 15px 0;
-    background: #242424;
-    border-left: 4px solid #ff4d4d;
+    background: #2a2a2a;
+    border-left: 4px solid #ff6b6b;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -128,12 +128,12 @@ body {
     cursor: default;
 }
 
-/* File Page */
+/* File Pages */
 .file-wrapper {
     max-width: 800px;
     margin: 80px auto;
     padding: 40px;
-    background: #242424;
+    background: #2a2a2a;
 }
 
 .file-content {
@@ -142,9 +142,9 @@ body {
     margin-top: 20px;
 }
 
-/* Censor Hover */
+/* Hover Censor */
 .censor {
-    background: #ff4d4d;
+    background: #ff6b6b;
     color: transparent;
     padding: 2px 6px;
     transition: 0.3s ease;
@@ -152,5 +152,20 @@ body {
 
 .censor:hover {
     background: transparent;
-    color: #ff4d4d;
+    color: #ff6b6b;
+}
+
+/* Buttons */
+.next-btn {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.next-btn:hover {
+    background: #cc4c4c;
 }
