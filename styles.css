@@ -1,197 +1,109 @@
 /* General */
 body {
-    margin: 0;
+    margin:0;
     font-family: 'Arial', sans-serif;
-    background: #1e1e1e;
-    color: #f5f5f5;
-    transition: background 0.3s ease;
+    background:#121212;
+    color:#f5f5f5;
 }
 
-/* Landing */
+/* Landing Page */
 .landing {
-    text-align: center;
-    margin-top: 15%;
-    padding: 0 10px;
+    text-align:center;
+    margin-top:15%;
+    padding:0 15px;
 }
-
 .main-title {
-    font-size: 3rem;
-    letter-spacing: 4px;
-    color: #ff6b6b;
+    font-size:3rem;
+    color:#ff4c4c;
+    letter-spacing:5px;
 }
-
 .countdown {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    opacity: 0.8;
+    margin-top:20px;
+    font-size:1.2rem;
+    opacity:0.8;
 }
-
 .enter-btn {
-    margin-top: 30px;
-    padding: 12px 30px;
-    background: #ff6b6b;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: 0.3s ease;
+    margin-top:30px;
+    padding:12px 30px;
+    background:#ff4c4c;
+    border:none;
+    border-radius:15px;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    transition:0.3s ease;
 }
-
-.enter-btn:hover {
-    background: #cc4c4c;
-    transform: translateY(-2px);
-}
+.enter-btn:hover { background:#cc3b3b; transform:translateY(-2px); }
 
 /* Hamburger */
 .hamburger {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 35px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1000;
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:35px;
+    height:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    cursor:pointer;
+    z-index:1000;
 }
-
 .hamburger div {
-    height: 4px;
-    background: #ff6b6b;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    height:4px;
+    background:#ff4c4c;
+    border-radius:2px;
+    transition:all 0.3s ease;
 }
 
 /* Admin Panel */
 .admin-panel {
-    position: fixed;
-    top: 0;
-    right: -320px;
-    width: 320px;
-    max-width: 80%;
-    height: 100%;
-    background: #2a2a2a;
-    padding: 30px;
-    transition: right 0.5s ease;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.5);
-    border-radius: 20px 0 0 20px;
-    overflow-y: auto;
-    z-index: 999;
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:320px;
+    max-width:80%;
+    height:100%;
+    background:#1f1f1f;
+    padding:30px;
+    border-radius:20px 0 0 20px;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+    transition:right 0.5s ease;
+    overflow-y:auto;
+    z-index:999;
 }
+.admin-panel.active { right:0; }
+.admin-panel input, .admin-panel button {
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    background:#121212;
+    border:1px solid #ff4c4c;
+    border-radius:12px;
+    color:white;
+}
+.admin-panel button { background:#ff4c4c; border:none; cursor:pointer; }
+.admin-panel button:hover { background:#cc3b3b; }
 
-.admin-panel.active {
-    right: 0;
-}
-
-.admin-panel input,
-.admin-panel button {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: #1e1e1e;
-    border: 1px solid #ff6b6b;
-    border-radius: 12px;
-    color: white;
-}
-
-.admin-panel button {
-    background: #ff6b6b;
-    border: none;
-    cursor: pointer;
-}
-
-.admin-panel button:hover {
-    background: #cc4c4c;
-}
-
-/* Vault & Files */
-.page-title {
-    text-align: center;
-    margin-top: 60px;
-    color: #ff6b6b;
-    padding: 0 10px;
-}
-
-#searchBar {
-    display: block;
-    margin: 30px auto;
-    padding: 12px;
-    width: 90%;
-    max-width: 400px;
-    background: #2a2a2a;
-    border: 1px solid #ff6b6b;
-    border-radius: 12px;
-    color: white;
-}
-
-.file-list {
-    max-width: 600px;
-    margin: auto;
-    padding: 0 10px;
-}
-
-.file {
-    padding: 20px;
-    margin: 15px 0;
-    background: #2a2a2a;
-    border-left: 6px solid #ff6b6b;
-    cursor: pointer;
-    border-radius: 15px;
-    transition: 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
-
-.file:hover {
-    background: #333;
-}
-
-.locked {
-    opacity: 0.4;
-    cursor: default;
-}
+/* Vault Page */
+.page-title { text-align:center; margin-top:60px; color:#ff4c4c; }
+#searchBar { display:block; margin:30px auto; padding:12px; width:90%; max-width:400px; border:1px solid #ff4c4c; border-radius:12px; background:#1f1f1f; color:white; }
+.file-list { max-width:600px; margin:auto; padding:0 10px; }
+.file { padding:20px; margin:15px 0; background:#1f1f1f; border-left:6px solid #ff4c4c; border-radius:15px; cursor:pointer; transition:0.3s ease; box-shadow:0 3px 10px rgba(0,0,0,0.4);}
+.file:hover { background:#2a2a2a; }
+.locked { opacity:0.4; cursor:default; }
 
 /* File Page */
-.file-wrapper {
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 40px;
-    background: #2a2a2a;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-    padding: 20px;
-}
-
-.file-content {
-    white-space: pre-wrap;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-
-/* Censor Hover */
-.censor {
-    background: #ff6b6b;
-    color: transparent;
-    padding: 2px 6px;
-    border-radius: 6px;
-    transition: 0.3s ease;
-}
-
-.censor:hover {
-    background: transparent;
-    color: #ff6b6b;
-}
+.file-wrapper { max-width:800px; margin:80px auto; padding:40px; background:#1f1f1f; border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,0.4); }
+.file-content { white-space:pre-wrap; line-height:1.6; margin-top:20px; }
+.censor { background:#ff4c4c; color:transparent; padding:2px 6px; border-radius:6px; transition:0.3s ease; }
+.censor:hover { background:transparent; color:#ff4c4c; }
 
 /* Buttons */
-.next-btn, .enter-btn {
-    border-radius: 15px;
-    transition: 0.3s ease;
-}
+.next-btn, .enter-btn { border-radius:15px; transition:0.3s ease; }
 
 /* Responsive */
-@media (max-width: 600px) {
-    .landing { margin-top: 10%; }
-    .main-title { font-size: 2rem; }
-    .file-wrapper { margin: 40px 10px; padding: 20px; }
+@media(max-width:600px){
+    .landing { margin-top:10%; }
+    .main-title { font-size:2rem; }
+    .file-wrapper { margin:40px 10px; padding:20px; }
 }
