@@ -11,6 +11,7 @@ body {
 .landing {
     text-align: center;
     margin-top: 15%;
+    padding: 0 10px;
 }
 
 .main-title {
@@ -32,7 +33,7 @@ body {
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: 0.3s ease;
 }
@@ -42,7 +43,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Hamburger Button */
+/* Hamburger */
 .hamburger {
     position: fixed;
     top: 20px;
@@ -69,12 +70,15 @@ body {
     top: 0;
     right: -320px;
     width: 320px;
+    max-width: 80%;
     height: 100%;
     background: #2a2a2a;
     padding: 30px;
     transition: right 0.5s ease;
     box-shadow: -5px 0 20px rgba(0,0,0,0.5);
     border-radius: 20px 0 0 20px;
+    overflow-y: auto;
+    z-index: 999;
 }
 
 .admin-panel.active {
@@ -96,25 +100,26 @@ body {
     background: #ff6b6b;
     border: none;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .admin-panel button:hover {
     background: #cc4c4c;
 }
 
-/* Vault */
+/* Vault & Files */
 .page-title {
     text-align: center;
     margin-top: 60px;
     color: #ff6b6b;
+    padding: 0 10px;
 }
 
 #searchBar {
     display: block;
     margin: 30px auto;
     padding: 12px;
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
     background: #2a2a2a;
     border: 1px solid #ff6b6b;
     border-radius: 12px;
@@ -124,6 +129,7 @@ body {
 .file-list {
     max-width: 600px;
     margin: auto;
+    padding: 0 10px;
 }
 
 .file {
@@ -132,7 +138,7 @@ body {
     background: #2a2a2a;
     border-left: 6px solid #ff6b6b;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 15px;
     transition: 0.3s ease;
     box-shadow: 0 3px 10px rgba(0,0,0,0.3);
 }
@@ -154,6 +160,7 @@ body {
     background: #2a2a2a;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    padding: 20px;
 }
 
 .file-content {
@@ -176,19 +183,15 @@ body {
     color: #ff6b6b;
 }
 
-/* Next Button */
-.next-btn {
-    margin-top: 40px;
-    padding: 12px 25px;
-    background: #ff6b6b;
-    border: none;
-    color: white;
-    border-radius: 12px;
-    cursor: pointer;
+/* Buttons */
+.next-btn, .enter-btn {
+    border-radius: 15px;
     transition: 0.3s ease;
 }
 
-.next-btn:hover {
-    background: #cc4c4c;
-    transform: translateY(-2px);
+/* Responsive */
+@media (max-width: 600px) {
+    .landing { margin-top: 10%; }
+    .main-title { font-size: 2rem; }
+    .file-wrapper { margin: 40px 10px; padding: 20px; }
 }
