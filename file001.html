@@ -6,17 +6,17 @@
 </head>
 <body>
 
-<h1>FILE 001</h1>
+<div class="file-wrapper">
+    <h1 class="file-title">FILE 001</h1>
+    <h3 class="subtitle">SUBJECT: <span class="censor">EN*** CH****</span></h3>
+    <div class="divider"></div>
 
-<div class="file-content" id="typewriter"></div>
+    <div id="typewriter" class="file-content"></div>
 
-<button class="next-btn" onclick="location.href='file002.html'">
-    NEXT FILE →
-</button>
-
-<audio autoplay loop>
-    <source src="audio/ambient.mp3" type="audio/mpeg">
-</audio>
+    <button class="next-btn" onclick="location.href='file002.html'">
+        NEXT FILE →
+    </button>
+</div>
 
 <script src="script.js"></script>
 </body>
