@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>The Enoch Files</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Enoch Files</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Landing -->
 <div class="landing">
     <h1 class="main-title">THE ENOCH FILES</h1>
     <div id="countdown" class="countdown">COUNTDOWN DISABLED</div>
-    <button class="enter-btn" onclick="goVault()">ENTER VAULT</button>
+    <button id="vaultBtn" class="enter-btn" style="display:none;" onclick="goVault()">ENTER VAULT</button>
 </div>
 
-<!-- Hamburger Admin Button -->
+<!-- Hamburger Admin -->
 <div class="hamburger" onclick="toggleAdmin()">
     <div></div>
     <div></div>
@@ -36,6 +37,11 @@
         <button onclick="setCountdown()">Set</button>
         <button onclick="pauseCountdown()">Pause</button>
         <button onclick="resetCountdown()">Reset</button>
+
+        <h4>Navigate Pages</h4>
+        <button onclick="navigateTo('index.html')">Landing</button>
+        <button onclick="navigateTo('vault.html')">Vault</button>
+        <button onclick="navigateTo('file001.html')">File 001</button>
     </div>
 </div>
 
