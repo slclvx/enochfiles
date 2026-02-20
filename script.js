@@ -18,7 +18,7 @@ function unlockAdmin() {
         sessionStorage.setItem("adminUnlocked", "true");
     } else {
         message.innerText = "Incorrect password.";
-        message.style.color = "#ff4d4d";
+        message.style.color = "#ff6b6b";
     }
 }
 
@@ -75,7 +75,7 @@ function searchFiles() {
     }
 }
 
-/* Typewriter */
+/* Typewriter Effect */
 const fileText = `
 DOCUMENT LOG — FILE 001
 
