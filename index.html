@@ -7,24 +7,30 @@
 <body>
 
 <div class="landing">
-    <h1 class="title">THE ENOCH FILES</h1>
-    <div id="countdown">COUNTDOWN DISABLED</div>
+    <h1 class="main-title">THE ENOCH FILES</h1>
+    <div id="countdown" class="countdown">COUNTDOWN DISABLED</div>
+    <button class="enter-btn" onclick="goVault()">ENTER VAULT</button>
 </div>
 
-<div class="admin-panel">
-    <h3>Admin Access</h3>
-    <input type="password" id="adminPass" placeholder="Enter Password">
-    <button onclick="unlockAdmin()">Unlock</button>
+<!-- Admin Toggle Button -->
+<div class="admin-toggle" onclick="toggleAdmin()">⚙</div>
+
+<!-- Admin Panel -->
+<div class="admin-panel" id="adminPanel">
+    <h3>ADMIN ACCESS</h3>
+
+    <div id="loginSection">
+        <input type="password" id="adminPass" placeholder="Password">
+        <button onclick="unlockAdmin()">Unlock</button>
+        <p id="loginMessage"></p>
+    </div>
 
     <div id="adminControls" style="display:none;">
-        <h4>Countdown Controls</h4>
+        <h4>Countdown</h4>
         <input type="datetime-local" id="dateInput">
-        <button onclick="setCountdown()">Set Countdown</button>
+        <button onclick="setCountdown()">Set</button>
         <button onclick="pauseCountdown()">Pause</button>
         <button onclick="resetCountdown()">Reset</button>
-
-        <h4>Navigation</h4>
-        <button onclick="goVault()">Go to Vault</button>
     </div>
 </div>
 
