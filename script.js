@@ -1,81 +1,65 @@
 let countdownInterval;
 let targetDate = null;
 
-/* Slide Admin Panel */
 function toggleAdmin() {
     document.getElementById("adminPanel").classList.toggle("active");
 }
 
-/* Unlock Admin */
 function unlockAdmin() {
     const pass = document.getElementById("adminPass").value;
-    const message = document.getElementById("loginMessage");
-
-    if (pass === "kovydovy") {
+    const msg = document.getElementById("loginMessage");
+    if(pass === "kovydovy") {
         document.getElementById("loginSection").style.display = "none";
         document.getElementById("adminControls").style.display = "block";
-        message.innerText = "";
+        msg.innerText = "";
         sessionStorage.setItem("adminUnlocked", "true");
     } else {
-        message.innerText = "Incorrect password.";
-        message.style.color = "#ff6b6b";
+        msg.innerText = "Incorrect password";
+        msg.style.color = "#ff6b6b";
     }
 }
 
-/* Keep Admin Unlocked During Session */
 window.onload = function() {
-    if (sessionStorage.getItem("adminUnlocked") === "true") {
+    if(sessionStorage.getItem("adminUnlocked") === "true") {
         document.getElementById("loginSection").style.display = "none";
         document.getElementById("adminControls").style.display = "block";
     }
-
     typeWriter();
 };
 
-/* Countdown */
+/* Countdown Functions */
 function setCountdown() {
     targetDate = new Date(document.getElementById("dateInput").value);
+    clearInterval(countdownInterval);
     countdownInterval = setInterval(updateCountdown, 1000);
 }
-
 function updateCountdown() {
     const now = new Date();
     const diff = targetDate - now;
-
-    if (diff <= 0) {
-        document.getElementById("countdown").innerText = "RELEASED";
-        clearInterval(countdownInterval);
-        return;
+    if(diff <= 0) { 
+        document.getElementById("countdown").innerText = "RELEASED"; 
+        clearInterval(countdownInterval); 
+        return; 
     }
-
-    const days = Math.floor(diff / (1000*60*60*24));
+    const days = Math.floor(diff/(1000*60*60*24));
     document.getElementById("countdown").innerText = days + " DAYS REMAINING";
 }
-
-function pauseCountdown() {
+function pauseCountdown() { clearInterval(countdownInterval); }
+function resetCountdown() { 
     clearInterval(countdownInterval);
+    document.getElementById("countdown").innerText = "COUNTDOWN DISABLED"; 
 }
 
-function resetCountdown() {
-    clearInterval(countdownInterval);
-    document.getElementById("countdown").innerText = "COUNTDOWN DISABLED";
-}
-
-function goVault() {
-    window.location.href = "vault.html";
-}
-
+/* Vault Search */
 function searchFiles() {
     const input = document.getElementById("searchBar").value.toUpperCase();
     const files = document.getElementsByClassName("file");
-
-    for (let i = 0; i < files.length; i++) {
-        files[i].style.display =
-            files[i].innerText.toUpperCase().includes(input) ? "" : "none";
+    for(let i=0;i<files.length;i++){
+        files[i].style.display = files[i].innerText.toUpperCase().includes(input)?"":"none";
     }
 }
 
-/* Typewriter Effect */
+/* Typewriter */
 const fileText = `
 DOCUMENT LOG — FILE 001
 
@@ -97,13 +81,11 @@ Worst decision of my life.
 `;
 
 let index = 0;
-
 function typeWriter() {
     const container = document.getElementById("typewriter");
-    if (!container) return;
-
-    if (index < fileText.length) {
-        container.innerHTML = fileText.substring(0, index);
+    if(!container) return;
+    if(index < fileText.length){
+        container.innerHTML = fileText.substring(0,index);
         index++;
         setTimeout(typeWriter, 25);
     }
