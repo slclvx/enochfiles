@@ -1,75 +1,113 @@
-body {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-    background: black;
-    color: #00ffcc;
-    overflow-x: hidden;
+let countdownInterval;
+let targetDate = null;
+
+/* Admin Unlock */
+function unlockAdmin() {
+    const pass = document.getElementById("adminPass").value;
+    if (pass === "kovydovy") {
+        document.getElementById("adminControls").style.display = "block";
+    } else {
+        alert("Access Denied.");
+    }
 }
 
-.title {
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 20%;
-    animation: fadeIn 2s ease-in-out;
+/* Countdown */
+function setCountdown() {
+    targetDate = new Date(document.getElementById("dateInput").value);
+    countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-#countdown {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.5rem;
+function updateCountdown() {
+    if (!targetDate) return;
+
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerText = "RELEASED";
+        clearInterval(countdownInterval);
+        return;
+    }
+
+    const days = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("countdown").innerText = days + " DAYS REMAINING";
 }
 
-.admin-panel {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: #111;
-    padding: 20px;
-    border-left: 2px solid #00ffcc;
+function pauseCountdown() {
+    clearInterval(countdownInterval);
 }
 
-.file {
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #00ffcc;
-    cursor: pointer;
-    transition: 0.3s ease;
+function resetCountdown() {
+    clearInterval(countdownInterval);
+    document.getElementById("countdown").innerText = "COUNTDOWN DISABLED";
 }
 
-.file:hover {
-    background: #00ffcc;
-    color: black;
+function goVault() {
+    window.location.href = "vault.html";
 }
 
-.next-btn {
-    margin-top: 40px;
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
-    cursor: pointer;
+/* Search */
+function searchFiles() {
+    const input = document.getElementById("searchBar").value.toUpperCase();
+    const files = document.getElementsByClassName("file");
+
+    for (let i = 0; i < files.length; i++) {
+        if (files[i].innerText.toUpperCase().includes(input)) {
+            files[i].style.display = "";
+        } else {
+            files[i].style.display = "none";
+        }
+    }
 }
 
-.next-btn:hover {
-    background: #00ffcc;
-    color: black;
+/* Typewriter */
+const fileText = `
+DOCUMENT SOURCE: Internal Communication Log
+STATUS: Archived
+
+---------------------------------------------
+
+Chapter 1: New Man
+Date: November 18th, 2025
+
+On this day, I met <span class="censor">Enoch</span>.
+He came from nowhere.
+Funny. Friendly. Accepted instantly.
+
+Morning tradition:
+Meeting Mrs. Long.
+Corner near the bathrooms.
+
+Everyone enjoyed him.
+
+---------------------------------------------
+
+Chapter 2: December 18th, 2025
+
+He said:
+"Alex, can I talk to you in private?"
+
+He told me:
+"I'm starting to talk with this girl.
+Her name is <span class="censor">Itzel</span>."
+
+I agreed to help him.
+
+Worst decision of my life.
+`;
+
+let index = 0;
+let typingSpeed = 25;
+
+function typeWriter() {
+    const container = document.getElementById("typewriter");
+    if (!container) return;
+
+    if (index < fileText.length) {
+        container.innerHTML = fileText.substring(0, index);
+        index++;
+        setTimeout(typeWriter, typingSpeed);
+    }
 }
 
-/* Censor effect */
-.censor {
-    background: #00ffcc;
-    color: transparent;
-    transition: 0.4s ease;
-}
-
-.censor:hover {
-    color: black;
-    background: transparent;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+window.onload = typeWriter;
